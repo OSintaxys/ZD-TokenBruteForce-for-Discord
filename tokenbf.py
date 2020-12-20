@@ -11,13 +11,13 @@ from tkinter import messagebox
 
 def banner():
     print("")
-    print("")
-    print(f"{Fore.CYAN}███████╗███████╗██████╗ ███████╗ ██████╗ ██╗   ██╗ █████╗ ██████╗ ")
-    print("╚══███╔╝██╔════╝██╔══██╗██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔══██╗")
-    print("  ███╔╝ █████╗  ██║  ██║███████╗██║   ██║██║   ██║███████║██║  ██║")
-    print(" ███╔╝  ██╔══╝  ██║  ██║╚════██║██║▄▄ ██║██║   ██║██╔══██║██║  ██║")
-    print("███████╗███████╗██████╔╝███████║╚██████╔╝╚██████╔╝██║  ██║██████╔╝")
-    print("╚══════╝╚══════╝╚═════╝ ╚══════╝ ╚══▀▀═╝  ╚═════╝ ╚═╝  ╚═╝╚═════╝ ")
+    print(f"{Fore.CYAN}")
+    print(f"""                      ███████╗██████╗ ▄▄███▄▄·
+                      ╚══███╔╝██╔══██╗██╔════╝
+                        ███╔╝ ██║  ██║███████╗
+                       ███╔╝  ██║  ██║╚════██║
+                      ███████╗██████╔╝███████║
+                      ╚══════╝╚═════╝ ╚═▀▀▀══╝""")
     print("                                                                  ")
     print("   ████████╗ ██████╗ ██╗  ██╗███████╗███╗   ██╗██████╗ ███████╗   ")
     print("   ╚══██╔══╝██╔═══██╗██║ ██╔╝██╔════╝████╗  ██║██╔══██╗██╔════╝   ")
@@ -33,6 +33,7 @@ def idbf():
     print(f"{Fore.BLUE}[$]{Style.RESET_ALL}    ID a realizar el Bruteforce:", end=" ")
     id = input()
     if (id.isdigit()):
+        if (len(id) == 18):
             idutf8 = id.encode("UTF-8")
             idencode = base64.b64encode(idutf8)
             idencode1 = idencode.decode("UTF-8")
@@ -68,10 +69,20 @@ def idbf():
                             print(f"{Fore.CYAN}[$]{Style.RESET_ALL}    Bruteforce terminado")
                             break
                 check()
-
-
+        else:
+            print(f"{Fore.CYAN}[$]{Style.RESET_ALL}    ID inválida, inténtelo de nuevo")
+            q = input()
+            if (q == ""):
+                idbf()
             else:
-                print(f"{Fore.CYAN}[$]{Style.RESET_ALL}    ID inválida")
+                idbf()
+    else:
+        print(f"{Fore.CYAN}[$]{Style.RESET_ALL}    ID inválida inténtelo de nuevo")
+        q = input()
+        if (q == ""):
+            idbf()
+        else:
+            idbf()
 
 def randombf():
             request_url = "https://discordapp.com/api/v6/users/@me"
@@ -171,6 +182,17 @@ else:
     else:
         os.system('cls')
         exit()
+
+
+
+
+    
+
+
+
+
+
+
 
 
 
