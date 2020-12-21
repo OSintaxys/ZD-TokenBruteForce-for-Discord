@@ -1,3 +1,4 @@
+#<===============Imports==================>#
 import sched, time 
 import os
 from urllib.request import urlopen
@@ -6,9 +7,9 @@ import random
 import string
 import requests
 from colorama import *
-import sys
 from tkinter import messagebox
 
+#<===============Banner==================>#
 def banner():
     print("")
     print(f"{Fore.CYAN}")
@@ -28,7 +29,7 @@ def banner():
     print("")
 
 
-
+#<===============Opción 1 // TokenBF por ID==================>#
 def idbf():
     print(f"{Fore.BLUE}[$]{Style.RESET_ALL}    ID a realizar el Bruteforce:", end=" ")
     id = input()
@@ -83,7 +84,7 @@ def idbf():
             idbf()
         else:
             idbf()
-
+#<===============Opción 2 // TokenBF Random==================>#
 def randombf():
             request_url = "https://discordapp.com/api/v6/users/@me"
 
@@ -117,7 +118,7 @@ def randombf():
                         
                         valor += 1
             check1()
-
+#<===============Menu==================>#
 def menu(): 
     os.system("@title   [$]  Token Bruteforce Script by O$int #ZedSquad  && cls")
     banner()
